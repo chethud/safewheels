@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+:root {
+  --brand-red: #c8101e;
+  --brand-red-dark: #990817;
+  --brand-black: #111111;
+  --brand-white: #ffffff;
+  --brand-grey-light: #f5f5f5;
+  --brand-grey: #777777;
+  --background: #ffffff;
+  --foreground: #111111;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-dark: var(--brand-red-dark);
+  --color-brand-black: var(--brand-black);
+  --color-brand-white: var(--brand-white);
+  --color-brand-grey-light: var(--brand-grey-light);
+  --color-brand-grey: var(--brand-grey);
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-fraunces);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand-red) 18%, white);
+  color: var(--brand-black);
+}
+
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+.ribbon-accent {
+  height: 3px;
+  width: 56px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand-red), var(--brand-red-dark));
+}
+
+.section-pad {
+  padding-inline: clamp(1.25rem, 4vw, 4rem);
+}
+
+.container-safe {
+  width: min(1200px, 100%);
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: min(1400px, 100%);
+  margin-inline: auto;
+}
+
+.surface {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.surface-md {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.surface-xl {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+.hover-zoom {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .hover-zoom {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  position: relative;
+  letter-spacing: 0.04em;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: var(--brand-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--brand-red);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 0.95rem 1.6rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: var(--brand-red-dark);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 0.95rem 1.6rem;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: var(--brand-black);
+  border-color: white;
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--brand-black);
+  color: var(--brand-black);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 0.9rem 1.5rem;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.btn-outline-dark:hover {
+  background: var(--brand-black);
+  color: white;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  background: white;
+  padding: 0.85rem 0.95rem;
+  font-size: 0.9rem;
+  color: var(--brand-black);
+  outline: none;
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease;
+}
+
+.field:focus {
+  border-color: var(--brand-red);
+}
+
+.field-label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-grey);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
