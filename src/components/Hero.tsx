@@ -19,7 +19,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/30" />
 
-        <div className="relative z-10 flex min-h-[100svh] flex-col justify-center section-pad pt-[88px] pb-20 md:pt-[96px] md:pb-24">
+        <div className="relative z-10 flex min-h-[100svh] flex-col justify-center section-pad pt-[88px] pb-24 md:pt-[96px] md:pb-28">
           <div className="container-wide max-w-2xl text-white">
             <motion.div
               initial={{ opacity: 0, y: 18 }}

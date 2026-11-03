@@ -8,10 +8,10 @@ import { Reveal } from "./Reveal";
 
 export function Contact() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-12 md:py-16">
       <div className="section-pad">
         <div className="container-wide">
-          <Reveal className="mb-12 max-w-3xl md:mb-16">
+          <Reveal className="mb-8 max-w-3xl md:mb-10">
             <div className="ribbon-accent mb-5" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
               Contact

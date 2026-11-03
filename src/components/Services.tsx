@@ -11,10 +11,10 @@ export function Services() {
   const supporting = services.filter((s) => !s.featured);
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-12 md:py-16">
       <div className="section-pad">
         <div className="container-wide">
-          <Reveal className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <Reveal className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
               <div className="ribbon-accent mb-5" />
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
@@ -37,10 +37,10 @@ export function Services() {
                 delay={index * 0.08}
                 className={`group relative overflow-hidden rounded-3xl ${
                   index === 0
-                    ? "min-h-[420px] lg:col-span-7"
+                    ? "min-h-[280px] lg:col-span-7 lg:min-h-[300px]"
                     : index === 1
-                      ? "min-h-[360px] lg:col-span-5"
-                      : "min-h-[360px] lg:col-span-12 lg:min-h-[380px]"
+                      ? "min-h-[240px] lg:col-span-5 lg:min-h-[300px]"
+                      : "min-h-[240px] lg:col-span-12 lg:min-h-[260px]"
                 }`}
               >
                 <Image
@@ -51,16 +51,16 @@ export function Services() {
                   sizes="(max-width: 1024px) 100vw, 60vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <h3 className="font-display text-3xl text-white md:text-4xl">
+                <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                  <h3 className="font-display text-2xl text-white md:text-3xl">
                     {service.title}
                   </h3>
-                  <p className="mt-3 max-w-md text-sm leading-relaxed text-white/80">
+                  <p className="mt-2 max-w-md text-sm leading-relaxed text-white/80">
                     {service.description}
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white transition hover:text-brand-red"
+                    className="mt-3 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white transition hover:text-brand-red"
                   >
                     Explore More <ArrowUpRight size={16} />
                   </Link>

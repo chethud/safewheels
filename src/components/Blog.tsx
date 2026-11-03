@@ -2,17 +2,20 @@
 
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { blogs } from "@/lib/data";
+import { useCms } from "@/components/cms/CmsProvider";
 import { Reveal } from "./Reveal";
 
 export function Blog() {
+  const { blogs } = useCms();
+  if (!blogs.length) return null;
+
   const [featured, ...rest] = blogs;
 
   return (
-    <section className="bg-brand-grey-light py-20 md:py-28">
+    <section className="bg-brand-grey-light py-12 md:py-16">
       <div className="section-pad">
         <div className="container-wide">
-          <Reveal className="mb-12 md:mb-16">
+          <Reveal className="mb-8 md:mb-10">
             <div className="ribbon-accent mb-5" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
               Latest Travel Stories
@@ -24,13 +27,17 @@ export function Blog() {
 
           <div className="grid gap-6 lg:grid-cols-12">
             <Reveal className="group relative min-h-[420px] overflow-hidden rounded-3xl lg:col-span-7">
-              <Image
-                src={featured.image}
-                alt={featured.title}
-                fill
-                className="img-cover hover-zoom"
-                sizes="(max-width: 1024px) 100vw, 58vw"
-              />
+              {featured.image ? (
+                <Image
+                  src={featured.image}
+                  alt={featured.title}
+                  fill
+                  className="img-cover hover-zoom"
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-brand-black" />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                 <time className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
@@ -39,6 +46,11 @@ export function Blog() {
                 <h3 className="mt-3 max-w-xl font-display text-3xl text-white md:text-4xl">
                   {featured.title}
                 </h3>
+                {featured.excerpt ? (
+                  <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/75">
+                    {featured.excerpt}
+                  </p>
+                ) : null}
                 <a
                   href={featured.href}
                   target="_blank"
@@ -53,18 +65,20 @@ export function Blog() {
             <div className="flex flex-col gap-6 lg:col-span-5">
               {rest.map((post, index) => (
                 <Reveal
-                  key={post.href}
+                  key={post.id || post.href || post.title}
                   delay={0.08 * (index + 1)}
                   className="group grid overflow-hidden rounded-3xl bg-white sm:grid-cols-[0.85fr_1.15fr]"
                 >
-                  <div className="relative min-h-[160px]">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="img-cover hover-zoom"
-                      sizes="(max-width: 640px) 100vw, 20vw"
-                    />
+                  <div className="relative min-h-[160px] bg-brand-grey-light">
+                    {post.image ? (
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="img-cover hover-zoom"
+                        sizes="(max-width: 640px) 100vw, 20vw"
+                      />
+                    ) : null}
                   </div>
                   <div className="flex flex-col justify-center p-5 md:p-6">
                     <time className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-grey">

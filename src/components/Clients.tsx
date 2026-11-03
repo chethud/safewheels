@@ -6,10 +6,10 @@ import { Reveal } from "./Reveal";
 
 export function Clients() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-12 md:py-16">
       <div className="section-pad">
         <div className="container-wide">
-          <Reveal className="mb-12 flex flex-col gap-6 md:mb-14 md:flex-row md:items-end md:justify-between">
+          <Reveal className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="ribbon-accent mb-5" />
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
@@ -34,14 +34,14 @@ export function Clients() {
               {clients.map((client, index) => (
                 <div
                   key={`${client.name}-${index}`}
-                  className="flex min-h-[120px] items-center justify-center rounded-2xl border border-black/6 bg-white px-6 py-8 grayscale transition hover:grayscale-0"
+                  className="flex min-h-[160px] items-center justify-center rounded-2xl border border-black/6 bg-white px-6 py-10 grayscale transition hover:grayscale-0"
                 >
                   <Image
                     src={client.src}
                     alt={client.name}
-                    width={160}
-                    height={70}
-                    className="max-h-14 w-auto object-contain"
+                    width={220}
+                    height={110}
+                    className="max-h-24 w-auto object-contain"
                   />
                 </div>
               ))}

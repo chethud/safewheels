@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 export default function BookPage() {
   return (
     <div className="pt-[72px] md:pt-[80px]">
-      <section className="relative overflow-hidden bg-brand-grey-light py-16 md:py-24">
+      <section className="relative overflow-hidden bg-brand-grey-light py-12 md:py-16">
         <div className="section-pad">
           <div className="container-wide">
-            <div className="mb-10 max-w-2xl md:mb-12">
+            <div className="mb-7 max-w-2xl md:mb-8">
               <div className="ribbon-accent mb-5" />
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
                 Book Now

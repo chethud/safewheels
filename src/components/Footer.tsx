@@ -14,7 +14,7 @@ export function Footer() {
   return (
     <footer className="bg-[#0c0c0c] text-white">
       <div className="h-1 w-full bg-gradient-to-r from-brand-red via-brand-red-dark to-brand-red" aria-hidden />
-      <div className="section-pad py-16 md:py-20">
+      <div className="section-pad py-12 md:py-16">
         <div className="container-wide grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Image

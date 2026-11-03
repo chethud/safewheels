@@ -11,10 +11,10 @@ export function Fleet() {
   const vehicle = fleet[active];
 
   return (
-    <section id="fleet" className="bg-brand-grey-light py-20 md:py-28">
+    <section id="fleet" className="bg-brand-grey-light py-12 md:py-16">
       <div className="section-pad">
         <div className="container-wide">
-          <Reveal className="mb-12 max-w-2xl md:mb-16">
+          <Reveal className="mb-8 max-w-2xl md:mb-10">
             <div className="ribbon-accent mb-5" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
               Our Fleet

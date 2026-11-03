@@ -8,10 +8,10 @@ import { Reveal } from "./Reveal";
 
 export function Destinations() {
   return (
-    <section className="bg-brand-black py-20 text-white md:py-28">
+    <section className="bg-brand-black py-12 text-white md:py-16">
       <div className="section-pad">
         <div className="container-wide">
-          <Reveal className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <Reveal className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
               <div className="ribbon-accent mb-5" />
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">

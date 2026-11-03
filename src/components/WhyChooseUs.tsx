@@ -31,7 +31,7 @@ export function WhyChooseUs() {
   const [featured, ...rest] = whyUs;
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-12 md:py-16">
       <div className="section-pad">
         <div className="container-wide">
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
