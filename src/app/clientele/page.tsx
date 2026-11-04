@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Clients } from "@/components/Clients";
+import { ClientelePageContent } from "@/components/ClientelePage";
 
 export const metadata: Metadata = {
   title: "Clientele",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ClientelePage() {
   return (
     <div className="pt-[72px] md:pt-[80px]">
-      <Clients />
+      <ClientelePageContent />
     </div>
   );
 }

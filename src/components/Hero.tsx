@@ -3,72 +3,115 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight, CarFront, Headphones, Play, ShieldCheck } from "lucide-react";
+import { BookingWidget } from "./BookingWidget";
+
+const trust = [
+  { label: "Safe & Reliable", icon: ShieldCheck },
+  { label: "Premium Fleet", icon: CarFront },
+  { label: "24/7 Support", icon: Headphones },
+] as const;
 
 export function Hero() {
   return (
-    <section className="relative bg-white">
-      <div className="relative min-h-[100svh] overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2400&q=80"
-          alt="Premium vehicle travelling along a scenic mountain road"
-          fill
-          priority
-          className="object-cover object-[center_40%]"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/30" />
+    <section className="relative overflow-hidden bg-brand-cream pt-[72px] md:pt-[84px]">
+      <div className="relative min-h-[88vh] md:min-h-[92vh]">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2400&q=80"
+            alt="Scenic mountain road journey through misty valleys at sunrise"
+            fill
+            priority
+            className="object-cover object-[68%_40%] md:object-[72%_42%]"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-cream from-[8%] via-brand-cream/92 via-[34%] to-transparent to-[68%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-cream via-brand-cream/15 to-transparent to-[55%]" />
+        </div>
 
-        <div className="relative z-10 flex min-h-[100svh] flex-col justify-center section-pad pt-[88px] pb-24 md:pt-[96px] md:pb-28">
-          <div className="container-wide max-w-2xl text-white">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="mb-5 flex items-center gap-3"
-            >
-              <span className="ribbon-accent" aria-hidden />
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80">
-                Est. 1999 · Mysuru · Celebrating 25+ Years
-              </p>
-            </motion.div>
+        <div className="relative z-10 section-pad flex min-h-[88vh] flex-col justify-between gap-10 pb-8 pt-12 md:min-h-[92vh] md:pb-10 md:pt-16">
+          <div className="container-wide w-full pt-2 md:pt-6">
+            <div className="w-full max-w-[34rem] lg:max-w-[38%]">
+              <motion.p
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-grey"
+              >
+                Tours · Transfers · Rentals
+              </motion.p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.08 }}
-              className="font-display text-[clamp(2.6rem,6vw,5.2rem)] leading-[0.95] tracking-tight text-white"
-            >
-              Every Journey
-              <br />
-              Deserves a{" "}
-              <span className="text-brand-red">Safer</span> Way.
-            </motion.h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, delay: 0.08 }}
+                className="mt-4 font-display text-[clamp(2.75rem,5.8vw,5rem)] leading-[0.98] tracking-tight text-brand-black"
+              >
+                Your Journey,
+                <br />
+                <span className="italic text-brand-red">Our Expertise.</span>
+              </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.18 }}
-              className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-lg"
-            >
-              From everyday transportation to unforgettable journeys, travel
-              with the experience and reliability of Safe Wheels.
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.16 }}
+                className="mt-5 max-w-md text-[0.98rem] leading-relaxed text-brand-grey md:text-base"
+              >
+                Domestic tours, airport transfers, corporate travel and luxury
+                rentals — designed for comfort, safety and peace of mind.
+              </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.28 }}
-              className="mt-8 flex flex-wrap gap-3"
-            >
-              <Link href="/book" className="btn-primary">
-                Book Your Vehicle
-              </Link>
-              <Link href="/tourist-places" className="btn-secondary">
-                Explore Destinations
-              </Link>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.65, delay: 0.24 }}
+                className="mt-8 flex flex-wrap gap-3"
+              >
+                <Link href="#booking" className="btn-primary">
+                  Plan Your Trip <ArrowRight size={16} />
+                </Link>
+                <a href="#about-preview" className="btn-secondary">
+                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
+                    <Play size={11} fill="currentColor" />
+                  </span>
+                  Watch Our Story
+                </a>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.65, delay: 0.32 }}
+                className="mt-9 flex flex-wrap gap-x-6 gap-y-3"
+              >
+                {trust.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={item.label}
+                      className="inline-flex items-center gap-2 text-[12px] font-medium text-brand-black/75"
+                    >
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-brand-red shadow-[0_6px_20px_rgba(23,23,23,0.06)]">
+                        <Icon size={15} strokeWidth={1.75} />
+                      </span>
+                      {item.label}
+                    </div>
+                  );
+                })}
+              </motion.div>
+            </div>
           </div>
+
+          {/* Floating booking bar — sits on the hero image like the reference */}
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="container-wide w-full"
+          >
+            <BookingWidget />
+          </motion.div>
         </div>
       </div>
     </section>

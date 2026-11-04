@@ -23,6 +23,9 @@
 # misc
 .DS_Store
 *.pem
+.tmp-page-content/
+.tmp-extract-blogs.mjs
+
 
 # debug
 npm-debug.log*

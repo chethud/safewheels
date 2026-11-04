@@ -5,17 +5,17 @@ import { Destinations } from "@/components/Destinations";
 import { Fleet } from "@/components/Fleet";
 import { Hero } from "@/components/Hero";
 import { HomeContactStrip } from "@/components/HomeContactStrip";
-import { HomeQuickActions } from "@/components/HomeQuickActions";
-import { Services } from "@/components/Services";
+import { HomeServices } from "@/components/HomeServices";
 import { Testimonials } from "@/components/Testimonials";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <HomeQuickActions />
-      <About />
-      <Services />
+      <HomeServices />
+      <div id="about-preview">
+        <About />
+      </div>
       <Fleet />
       <Destinations />
       <Testimonials />

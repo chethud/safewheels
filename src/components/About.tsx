@@ -6,7 +6,7 @@ import { Reveal } from "./Reveal";
 
 export function About() {
   return (
-    <section className="bg-white py-12 md:py-16">
+    <section className="bg-brand-cream py-12 md:py-16">
       <div className="section-pad">
         <div className="container-wide grid items-stretch gap-5 lg:grid-cols-2 lg:gap-6">
           <Reveal className="relative min-h-[280px] overflow-hidden rounded-3xl lg:min-h-[420px]">

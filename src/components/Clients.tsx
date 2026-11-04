@@ -1,52 +1,52 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { clients } from "@/lib/data";
 import { Reveal } from "./Reveal";
 
-export function Clients() {
+export function Clients({ showViewMore = true }: { showViewMore?: boolean }) {
+  const row = [...clients, ...clients];
+
   return (
-    <section className="bg-white py-12 md:py-16">
+    <section className="bg-brand-cream py-6 md:py-8">
       <div className="section-pad">
         <div className="container-wide">
-          <Reveal className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
+          <Reveal className="mb-3 flex flex-col gap-2 md:mb-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <div className="ribbon-accent mb-5" />
+              <div className="ribbon-accent mb-2" />
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
                 Our Valued Clients
               </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.2rem)] leading-[1.05] text-brand-black">
+              <h2 className="mt-1.5 font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-[1.05] text-brand-black">
                 Trusted by organisations that value reliability.
               </h2>
             </div>
-            <a
-              href="https://safewheelsindia.com/clientele/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline-dark w-fit"
-            >
-              View More
-            </a>
+            {showViewMore ? (
+              <Link href="/clientele" className="btn-outline-dark w-fit">
+                View More
+              </Link>
+            ) : null}
           </Reveal>
+        </div>
+      </div>
 
-          <Reveal>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-              {clients.map((client, index) => (
-                <div
-                  key={`${client.name}-${index}`}
-                  className="flex min-h-[160px] items-center justify-center rounded-2xl border border-black/6 bg-white px-6 py-10 grayscale transition hover:grayscale-0"
-                >
-                  <Image
-                    src={client.src}
-                    alt={client.name}
-                    width={220}
-                    height={110}
-                    className="max-h-24 w-auto object-contain"
-                  />
-                </div>
-              ))}
+      <div className="clients-marquee group relative overflow-hidden">
+        <div className="clients-marquee-track flex w-max gap-3">
+          {row.map((client, index) => (
+            <div
+              key={`${client.name}-${index}`}
+              className="flex h-[100px] w-[200px] shrink-0 items-center justify-center rounded-2xl border border-black/6 bg-white px-5 md:h-[110px] md:w-[220px]"
+            >
+              <Image
+                src={client.src}
+                alt={client.name}
+                width={280}
+                height={140}
+                className="max-h-16 w-auto max-w-[160px] object-contain md:max-h-20"
+              />
             </div>
-          </Reveal>
+          ))}
         </div>
       </div>
     </section>

@@ -7,9 +7,8 @@ import { Reveal } from "./Reveal";
 
 export function Blog() {
   const { blogs } = useCms();
-  if (!blogs.length) return null;
-
-  const [featured, ...rest] = blogs;
+  const posts = blogs.slice(0, 3);
+  if (!posts.length) return null;
 
   return (
     <section className="bg-brand-grey-light py-12 md:py-16">
@@ -25,80 +24,47 @@ export function Blog() {
             </h2>
           </Reveal>
 
-          <div className="grid gap-6 lg:grid-cols-12">
-            <Reveal className="group relative min-h-[420px] overflow-hidden rounded-3xl lg:col-span-7">
-              {featured.image ? (
-                <Image
-                  src={featured.image}
-                  alt={featured.title}
-                  fill
-                  className="img-cover hover-zoom"
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                />
-              ) : (
-                <div className="absolute inset-0 bg-brand-black" />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                <time className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70">
-                  {featured.date}
-                </time>
-                <h3 className="mt-3 max-w-xl font-display text-3xl text-white md:text-4xl">
-                  {featured.title}
-                </h3>
-                {featured.excerpt ? (
-                  <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/75">
-                    {featured.excerpt}
-                  </p>
-                ) : null}
-                <a
-                  href={featured.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-5 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white transition hover:text-brand-red"
-                >
-                  Read More <ArrowUpRight size={15} />
-                </a>
-              </div>
-            </Reveal>
-
-            <div className="flex flex-col gap-6 lg:col-span-5">
-              {rest.map((post, index) => (
-                <Reveal
-                  key={post.id || post.href || post.title}
-                  delay={0.08 * (index + 1)}
-                  className="group grid overflow-hidden rounded-3xl bg-white sm:grid-cols-[0.85fr_1.15fr]"
-                >
-                  <div className="relative min-h-[160px] bg-brand-grey-light">
-                    {post.image ? (
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="img-cover hover-zoom"
-                        sizes="(max-width: 640px) 100vw, 20vw"
-                      />
-                    ) : null}
-                  </div>
-                  <div className="flex flex-col justify-center p-5 md:p-6">
-                    <time className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-grey">
-                      {post.date}
-                    </time>
-                    <h3 className="mt-2 font-display text-xl leading-snug text-brand-black">
-                      {post.title}
-                    </h3>
-                    <a
-                      href={post.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-black transition hover:text-brand-red"
-                    >
-                      Read More <ArrowUpRight size={14} />
-                    </a>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post, index) => (
+              <Reveal
+                key={post.id || post.href || post.title}
+                delay={0.05 * index}
+                className="group overflow-hidden rounded-3xl bg-white"
+              >
+                <div className="relative min-h-[180px] bg-brand-black/5">
+                  {post.image ? (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="img-cover hover-zoom"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  ) : null}
+                </div>
+                <div className="flex flex-col p-5 md:p-6">
+                  <time className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-grey">
+                    {post.date}
+                  </time>
+                  <h3 className="mt-2 font-display text-xl leading-snug text-brand-black md:text-[1.35rem]">
+                    {post.title}
+                  </h3>
+                  {post.excerpt ? (
+                    <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-brand-grey">
+                      {post.excerpt}
+                    </p>
+                  ) : null}
+                  <a
+                    href={post.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-black transition hover:text-brand-red"
+                  >
+                    Read More <ArrowUpRight size={14} />
+                  </a>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </div>

@@ -32,12 +32,49 @@ export const siteConfig = {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/why-us", label: "Why Us" },
   { href: "/services", label: "Services" },
-  { href: "/clientele", label: "Clientele" },
   { href: "/tourist-places", label: "Tourist Places" },
-  { href: "/book", label: "Book Now" },
-  { href: "/contact", label: "Contact" },
+  { href: "/why-us", label: "Why Us" },
+  { href: "/clientele", label: "Clientele" },
+] as const;
+
+export const homeServices = [
+  {
+    id: "domestic",
+    title: "Domestic Tours",
+    description:
+      "Curated journeys across India — hill stations, heritage cities and coastal escapes.",
+    href: "/services",
+    image:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "airport",
+    title: "Airport Transfers",
+    description:
+      "Punctual pickups and drops to Bengaluru and Mysuru airports — day or night.",
+    href: "/services",
+    image:
+      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "luxury",
+    title: "Luxury Rentals",
+    description:
+      "Premium cars for occasions that call for presence, comfort and refined presentation.",
+    href: "/book",
+    image:
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "places",
+    title: "Tourist Places",
+    description:
+      "Discover remarkable destinations and memorable experiences around Mysuru and beyond.",
+    href: "/tourist-places",
+    image:
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+  },
 ] as const;
 
 export const services = [
@@ -280,7 +317,7 @@ export const clients = [
     src: "https://safewheelsindia.com/wp-content/uploads/2022/08/jss.jpg",
   },
   {
-    name: "Client",
+    name: "Narayana Health",
     src: "https://safewheelsindia.com/wp-content/uploads/2024/07/nhh.jpg",
   },
   {
@@ -293,27 +330,129 @@ export const clients = [
   },
 ] as const;
 
+/** Full esteemed clientele list (shown on /clientele). */
+export const clienteleNames = [
+  "3G Consultants",
+  "Apollo BGS Hospital",
+  "Asian Paints Ltd",
+  "Akash Pharmaceuticals",
+  "Autoliv India Pvt Ltd",
+  "Bank Note Paper Mill (P) Ltd",
+  "Base Education Services Pvt Ltd",
+  "B.S.Ravikumar & Associates",
+  "BEML",
+  "Bharathi Yoga Dhama",
+  "Boehringer-Ingelheim",
+  "CAD Station Technologies",
+  "Cadila Healthcare Ltd",
+  "Deputy Director Information",
+  "DC Office",
+  "Eris Life Sciences Pvt. Ltd.",
+  "Eskon Traders",
+  "Farooquia Dental College",
+  "First Choice Food Products",
+  "Forward",
+  "GIPS",
+  "Giri Stones Pvt Ltd",
+  "GSSS Institute of Engineering",
+  "HDFC Standard Life Insurance",
+  "Hanu Reddy Realty",
+  "Hindustan Unilever Ltd",
+  "Hollingsworth & Vose",
+  "Ifimed Pharmaceuticals Pvt Ltd",
+  "Indospectrum Pharmaceuticals",
+  "Infomaze Tech & Solution Pvt Ltd",
+  "J.B.Chemicals",
+  "J.K.Tyres Ltd",
+  "J.S.S Ayurveda Hospital",
+  "J.S.S College of Nanjangud",
+  "J.S.S Hospital",
+  "J.S.S Medical College",
+  "J.S.S Travel Desk SJCE Campus",
+  "J.S.S.Ayurveda Medical College",
+  "J.S.S.University",
+  "Jaypee Cement",
+  "Jubilant Generics Ltd",
+  "L & T Electrical & Automation",
+  "L & T Technology Services",
+  "LG Balakrishnan & Bros. Ltd",
+  "LG Electronics India Ltd",
+  "Maris Spinners Ltd",
+  "Micro Labs Ltd",
+  "MCC",
+  "Murugan Medicals",
+  "Mysore Paints & Varnish",
+  "Nandi Roller Flour Mills",
+  "Narayana Hrudayalaya",
+  "Nestle India Ltd",
+  "NIIT",
+  "Novo Nordisk",
+  "Pinakini Construction",
+  "Properties in Mysore",
+  "Ramaswamy.K",
+  "Rane (Madras) Ltd",
+  "Religare Health Insurance",
+  "RIIIT",
+  "S.J.C.E",
+  "S3V Technologies",
+  "SAN Engineering Locomotive",
+  "Shahi Exports Pvt. Ltd",
+  "Shree Aruna Consultants",
+  "Siddartha Resorts & Foods Pvt Ltd.",
+  "Skill Tech Engineers Contract",
+  "Sri Vivekananda Sevasharama",
+  "State Resources Centre",
+  "Sun Pharma Laboratories Ltd",
+  "Sys Information India (P) Ltd",
+  "Thought Focus",
+  "The Printers",
+  "Torrent Pharmaceuticals Ltd",
+  "Ultratech Cements Ltd",
+  "Usha Kiran Charitable Trust",
+  "USV Ltd",
+  "Vikram Hospital",
+  "Voith Paper Technology (India)",
+  "VTU",
+  "Zoo",
+] as const;
+
 export const blogs = [
   {
-    title: "Airport Transfers Made Easy: Tips for Stress-Free Travel",
-    date: "June 25, 2024",
-    href: "https://safewheelsindia.com/blogs/airport-transfers-made-easy-tips-for-stress-free-travel/",
-    image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Exploring Mysuru Like a Local: Best Places to Visit with a Private Cab",
-    date: "February 15, 2023",
-    href: "https://safewheelsindia.com/blogs/exploring-mysuru-like-a-local-best-places-to-visit-with-a-private-cab/",
-    image:
-      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80",
+    title: "Why Choosing a Taxi in Mysore is Best for Tourists and Families",
+    date: "August 5, 2025",
+    href: "https://safewheelsindia.com/blogs/why-choosing-a-taxi-in-mysore-is-best-for-tourists-and-families/",
+    image: "/images/blogs/mysore-choose-blogimg.png",
   },
   {
     title: "Best Taxi Services in Mysore for Airport, Coorg & Ooty Trips",
     date: "August 5, 2025",
     href: "https://safewheelsindia.com/blogs/best-taxi-services-in-mysore-for-airport-coorg-ooty-trips/",
-    image:
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/blogs/taxi-mysore-img-1.png",
+  },
+  {
+    title: "How to Choose the Right Taxi Services in Mysore for Your Travel",
+    date: "August 5, 2025",
+    href: "https://safewheelsindia.com/blogs/how-to-choose-the-right-taxi-services-in-mysore-for-your-travel/",
+    image: "/images/blogs/choose-imgblog.png",
+  },
+  {
+    title: "Airport Transfers Made Easy: Tips for Stress-Free Travel",
+    date: "June 25, 2024",
+    href: "https://safewheelsindia.com/blogs/airport-transfers-made-easy-tips-for-stress-free-travel/",
+    image: "/images/blogs/safewheelblog2.jpg",
+  },
+  {
+    title: "Exploring Mysuru Like a Local: Best Places to Visit with a Private Cab",
+    date: "February 15, 2023",
+    href: "https://safewheelsindia.com/blogs/exploring-mysuru-like-a-local-best-places-to-visit-with-a-private-cab/",
+    image: "/images/blogs/safewheelblog3.jpg",
+  },
+  {
+    title:
+      "Top 5 Reasons to Choose Safe Wheels India for Your Mysuru to Bengaluru Airport Transfers",
+    date: "August 3, 2022",
+    href: "https://safewheelsindia.com/blogs/top-5-reasons-to-choose-safe-wheels-india-for-your-mysuru-to-bengaluru-airport-transfers/",
+    image: "/images/blogs/safewheelblog1.jpg",
   },
 ] as const;
 
