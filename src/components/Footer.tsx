@@ -12,8 +12,7 @@ function FacebookIcon() {
 
 export function Footer() {
   return (
-    <footer className="bg-[#0c0c0c] text-white">
-      <div className="h-1 w-full bg-gradient-to-r from-brand-red via-brand-red-dark to-brand-red" aria-hidden />
+    <footer className="border-t border-black/8 bg-white text-brand-black">
       <div className="section-pad py-12 md:py-16">
         <div className="container-wide grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
@@ -24,7 +23,7 @@ export function Footer() {
               height={98}
               className="h-16 w-auto rounded-2xl object-contain"
             />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-brand-grey">
               Safe, reliable and hassle-free travel from Mysuru since 1999—
               serving families, guests and corporate travellers with care.
             </p>
@@ -32,7 +31,7 @@ export function Footer() {
               href={siteConfig.social.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 text-white/80 transition hover:border-brand-red hover:text-brand-red"
+              className="mt-6 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-black/10 text-brand-black/70 transition hover:border-brand-red hover:text-brand-red"
               aria-label="Safe Wheels on Facebook"
             >
               <FacebookIcon />
@@ -40,7 +39,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-grey">
               Quick Links
             </h3>
             <ul className="mt-5 space-y-3">
@@ -48,7 +47,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 transition hover:text-white"
+                    className="text-sm text-brand-black/70 transition hover:text-brand-red"
                   >
                     {link.label}
                   </Link>
@@ -58,7 +57,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-grey">
               Our Services
             </h3>
             <ul className="mt-5 space-y-3">
@@ -66,7 +65,7 @@ export function Footer() {
                 <li key={service.id}>
                   <Link
                     href="/services"
-                    className="text-sm text-white/70 transition hover:text-white"
+                    className="text-sm text-brand-black/70 transition hover:text-brand-red"
                   >
                     {service.title}
                   </Link>
@@ -76,10 +75,10 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/50">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-grey">
               Contact
             </h3>
-            <div className="mt-5 space-y-3 text-sm text-white/70">
+            <div className="mt-5 space-y-3 text-sm text-brand-black/70">
               <p>
                 {siteConfig.address.title}
                 <br />
@@ -102,9 +101,9 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
+      <div className="border-t border-black/8">
         <div className="section-pad py-5">
-          <div className="container-wide flex flex-col gap-2 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+          <div className="container-wide flex flex-col gap-2 text-xs text-brand-grey sm:flex-row sm:items-center sm:justify-between">
             <p>© 2026 Safe Wheels Tours & Travels. All Rights Reserved.</p>
             <p className="tracking-[0.12em] uppercase">Mysuru · Est. 1999</p>
           </div>

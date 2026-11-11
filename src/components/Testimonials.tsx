@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import { useCms } from "@/components/cms/CmsProvider";
 import { Reveal } from "./Reveal";
 
@@ -37,7 +36,6 @@ function Initials({ name }: { name: string }) {
 
 export function Testimonials() {
   const { testimonials } = useCms();
-  const reduce = useReducedMotion();
   const [featured, ...rest] = testimonials;
 
   if (!testimonials.length) return null;
@@ -70,16 +68,12 @@ export function Testimonials() {
             {featured ? (
               <Reveal>
                 <blockquote className="relative overflow-hidden rounded-[1.75rem] border border-black/8 bg-brand-grey-light p-6 md:p-8">
-                  <motion.span
+                  <span
                     aria-hidden
-                    initial={reduce ? false : { opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 0.12, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="pointer-events-none absolute -top-3 left-4 font-display text-[7rem] leading-none text-brand-red md:text-[8.5rem]"
+                    className="pointer-events-none absolute -top-3 left-4 font-display text-[7rem] leading-none text-brand-red/12 md:text-[8.5rem]"
                   >
                     “
-                  </motion.span>
+                  </span>
                   <Stars rating={featured.rating} />
                   <p className="relative mt-3 max-w-4xl font-display text-[1.25rem] leading-snug text-brand-black md:text-[1.45rem]">
                     {featured.quote}

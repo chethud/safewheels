@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, CarFront, Headphones, Play, ShieldCheck } from "lucide-react";
 import { BookingWidget } from "./BookingWidget";
 
@@ -32,42 +31,22 @@ export function Hero() {
         <div className="relative z-10 section-pad flex min-h-[88vh] flex-col justify-between gap-10 pb-8 pt-12 md:min-h-[92vh] md:pb-10 md:pt-16">
           <div className="container-wide w-full pt-2 md:pt-6">
             <div className="w-full max-w-[34rem] lg:max-w-[38%]">
-              <motion.p
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-grey"
-              >
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-grey">
                 Tours · Transfers · Rentals
-              </motion.p>
+              </p>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 22 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.75, delay: 0.08 }}
-                className="mt-4 font-display text-[clamp(2.75rem,5.8vw,5rem)] leading-[0.98] tracking-tight text-brand-black"
-              >
+              <h1 className="mt-4 font-display text-[clamp(2.75rem,5.8vw,5rem)] leading-[0.98] tracking-tight text-brand-black">
                 Your Journey,
                 <br />
                 <span className="italic text-brand-red">Our Expertise.</span>
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.16 }}
-                className="mt-5 max-w-md text-[0.98rem] leading-relaxed text-brand-grey md:text-base"
-              >
+              <p className="mt-5 max-w-md text-[0.98rem] leading-relaxed text-brand-grey md:text-base">
                 Domestic tours, airport transfers, corporate travel and luxury
                 rentals — designed for comfort, safety and peace of mind.
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.24 }}
-                className="mt-8 flex flex-wrap gap-3"
-              >
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="#booking" className="btn-primary">
                   Plan Your Trip <ArrowRight size={16} />
                 </Link>
@@ -77,14 +56,9 @@ export function Hero() {
                   </span>
                   Watch Our Story
                 </a>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.65, delay: 0.32 }}
-                className="mt-9 flex flex-wrap gap-x-6 gap-y-3"
-              >
+              <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3">
                 {trust.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -99,19 +73,14 @@ export function Hero() {
                     </div>
                   );
                 })}
-              </motion.div>
+              </div>
             </div>
           </div>
 
           {/* Floating booking bar — sits on the hero image like the reference */}
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-            className="container-wide w-full"
-          >
+          <div className="container-wide w-full">
             <BookingWidget />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

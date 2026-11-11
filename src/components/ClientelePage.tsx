@@ -2,8 +2,43 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { clienteleNames, clients, siteConfig } from "@/lib/data";
+import { Handshake, Users } from "lucide-react";
+import {
+  clienteleLogos,
+  clienteleNames,
+  partnerLogos,
+  siteConfig,
+} from "@/lib/data";
 import { Reveal } from "./Reveal";
+
+function LogoGrid({
+  items,
+}: {
+  items: readonly { name: string; src: string; dark?: boolean }[];
+}) {
+  return (
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 md:gap-4">
+      {items.map((item) => (
+        <div
+          key={`${item.name}-${item.src}`}
+          className={`flex h-[100px] items-center justify-center rounded-2xl border px-4 md:h-[120px] ${
+            item.dark
+              ? "border-black/20 bg-black"
+              : "border-black/6 bg-white"
+          }`}
+        >
+          <Image
+            src={item.src}
+            alt={item.name}
+            width={280}
+            height={140}
+            className="max-h-14 w-auto max-w-[150px] object-contain md:max-h-[4.5rem]"
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function ClientelePageContent() {
   return (
@@ -25,21 +60,36 @@ export function ClientelePageContent() {
             </p>
           </Reveal>
 
-          <Reveal className="mb-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:mb-12 md:grid-cols-4 md:gap-4">
-            {clients.map((client) => (
-              <div
-                key={client.src}
-                className="flex h-[100px] items-center justify-center rounded-2xl border border-black/6 bg-white px-4 md:h-[120px]"
-              >
-                <Image
-                  src={client.src}
-                  alt={client.name}
-                  width={280}
-                  height={140}
-                  className="max-h-14 w-auto max-w-[140px] object-contain md:max-h-16"
-                />
-              </div>
-            ))}
+          <Reveal className="mb-3 flex items-center gap-3 md:mb-4">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#C9A227]/12 text-[#8F7410]">
+              <Users size={16} strokeWidth={1.75} />
+            </span>
+            <div>
+              <h2 className="text-[13px] font-semibold uppercase tracking-[0.16em] text-brand-black">
+                Clientele
+              </h2>
+              <span className="mt-1 block h-px w-10 bg-[#C9A227]" />
+            </div>
+          </Reveal>
+
+          <Reveal className="mb-12 md:mb-14">
+            <LogoGrid items={clienteleLogos} />
+          </Reveal>
+
+          <Reveal className="mb-3 flex items-center gap-3 md:mb-4">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#C9A227]/12 text-[#8F7410]">
+              <Handshake size={16} strokeWidth={1.75} />
+            </span>
+            <div>
+              <h2 className="text-[13px] font-semibold uppercase tracking-[0.16em] text-brand-black">
+                Partners &amp; Associations
+              </h2>
+              <span className="mt-1 block h-px w-10 bg-[#C9A227]" />
+            </div>
+          </Reveal>
+
+          <Reveal className="mb-12 md:mb-14">
+            <LogoGrid items={partnerLogos} />
           </Reveal>
 
           <Reveal>

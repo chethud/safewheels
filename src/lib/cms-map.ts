@@ -25,7 +25,6 @@ export function blogFromCms(raw: unknown): CmsBlog | null {
   if (!title) return null;
 
   const slug = str(row.slug) || str(row.id) || title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-  const href = str(row.source) || str(row.href) || str(row.url);
   const body = strList(row.body).length
     ? strList(row.body)
     : strList(row.paragraphs).length
@@ -37,7 +36,7 @@ export function blogFromCms(raw: unknown): CmsBlog | null {
     id: str(row.id) || slug,
     title,
     date: str(row.date) || "",
-    href: href || "#",
+    href: `/blogs/${slug}`,
     image: str(row.image) || "",
     excerpt,
     body: body.length ? body : undefined,

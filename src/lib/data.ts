@@ -77,6 +77,81 @@ export const homeServices = [
   },
 ] as const;
 
+/** Primary services shown on /services (4-card grid). */
+export const pageServices = [
+  {
+    id: "domestic",
+    title: "Domestic Tours",
+    description:
+      "Curated journeys across India — hill stations, heritage cities and coastal escapes.",
+    href: "/book",
+    cta: "Explore Tours",
+    icon: "car",
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "airport",
+    title: "Airport Transfers",
+    description:
+      "Punctual pickups and drops to Bengaluru and Mysuru airports — day or night.",
+    href: "/book",
+    cta: "Learn More",
+    icon: "plane",
+    image:
+      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "luxury",
+    title: "Luxury Vehicle Rentals",
+    description:
+      "Premium cars for occasions that call for presence, comfort and refined presentation.",
+    href: "/book",
+    cta: "View Fleet",
+    icon: "gem",
+    image:
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "places",
+    title: "Tourist Places",
+    description:
+      "Discover remarkable destinations and memorable experiences across India.",
+    href: "/tourist-places",
+    cta: "Explore Places",
+    icon: "pin",
+    image:
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+  },
+] as const;
+
+export const serviceProcess = [
+  {
+    step: "01",
+    title: "Choose a Service",
+    description: "Select from our range of travel solutions.",
+    icon: "calendar",
+  },
+  {
+    step: "02",
+    title: "Share Your Details",
+    description: "Tell us your travel requirements.",
+    icon: "clipboard",
+  },
+  {
+    step: "03",
+    title: "Get Confirmation",
+    description: "Receive a quick booking confirmation.",
+    icon: "check",
+  },
+  {
+    step: "04",
+    title: "Travel Hassle-Free",
+    description: "Enjoy a comfortable and safe journey.",
+    icon: "car",
+  },
+] as const;
+
 export const services = [
   {
     id: "domestic",
@@ -189,6 +264,74 @@ export const fleet = [
     description:
       "Practical, well-maintained cars for airport transfers and everyday city travel.",
     image: "https://safewheelsindia.com/wp-content/uploads/2022/08/Etios.jpg",
+  },
+] as const;
+
+export const aboutPillars = [
+  {
+    title: "Our Vision",
+    description:
+      "To mount a progressing structure in the years ahead — becoming Mysuru’s most trusted name for safe, seamless travel across India and beyond.",
+  },
+  {
+    title: "Our Mission",
+    description:
+      "Deliver safe, reliable and hassle-free travel with experienced drivers, a well-maintained fleet and genuine hospitality on every trip.",
+  },
+  {
+    title: "Our Promise",
+    description:
+      "Punctual pickups, transparent communication and journeys planned around your comfort — whether it is a city transfer or a long outstation tour.",
+  },
+] as const;
+
+export const aboutMilestones = [
+  {
+    year: "1999",
+    title: "Founded in Mysuru",
+    description:
+      "Safe Wheels began with a simple idea — travel that lives up to its name.",
+  },
+  {
+    year: "2000s",
+    title: "Fleet & reach grow",
+    description:
+      "Expanded rentals, airport transfers and domestic tour packages across Karnataka.",
+  },
+  {
+    year: "2010s",
+    title: "Trusted by institutions",
+    description:
+      "Became a preferred partner for hospitals, campuses and corporate travellers.",
+  },
+  {
+    year: "Today",
+    title: "25+ years of journeys",
+    description:
+      "Still family-rooted in Saraswathipuram — still focused on safety and care.",
+  },
+] as const;
+
+export const aboutOffers = [
+  {
+    title: "Domestic & International Tours",
+    description:
+      "Curated itineraries with dependable ground support from Mysuru outwards.",
+  },
+  {
+    title: "Airport Transfers",
+    description:
+      "Punctual Bengaluru and Mysuru airport pickups — day or night.",
+  },
+  {
+    title: "Corporate Travel",
+    description:
+      "Executive transfers, plant visits and employee travel with account-friendly service.",
+  },
+  {
+    title: "Luxury & Group Rentals",
+    description:
+      "From premium cars to tempo travellers — vehicles matched to the occasion.",
   },
 ] as const;
 
@@ -321,13 +464,76 @@ export const clients = [
     src: "https://safewheelsindia.com/wp-content/uploads/2024/07/nhh.jpg",
   },
   {
-    name: "Client",
-    src: "https://safewheelsindia.com/wp-content/uploads/2024/07/03.jpg",
+    name: "BEML",
+    src: "/images/clientele/beml-v2.png",
   },
   {
     name: "Viwah",
     src: "https://safewheelsindia.com/wp-content/uploads/2022/08/viwah-logonew.png",
   },
+  {
+    name: "Manipal Hospitals",
+    src: "/images/clientele/manipal-hospitals.png",
+  },
+  {
+    name: "Forward",
+    src: "/images/clientele/forward-logo.png",
+  },
+  {
+    name: "BEL",
+    src: "/images/clientele/bel-v2.png",
+  },
+] as const;
+
+/** Featured clientele logos on /clientele (brochure + site assets). */
+export const clienteleLogos = [
+  { name: "BEML", src: "/images/clientele/beml-v2.png" },
+  {
+    name: "L&T",
+    src: "https://safewheelsindia.com/wp-content/uploads/2022/08/lt.jpg",
+  },
+  {
+    name: "LG",
+    src: "https://safewheelsindia.com/wp-content/uploads/2022/08/lg.jpg",
+  },
+  { name: "Manipal Hospitals", src: "/images/clientele/manipal-hospitals.png" },
+  {
+    name: "Narayana Health",
+    src: "https://safewheelsindia.com/wp-content/uploads/2024/07/nhh.jpg",
+  },
+  { name: "Forward", src: "/images/clientele/forward-logo.png" },
+  { name: "BEL", src: "/images/clientele/bel-v2.png" },
+  {
+    name: "JSS Mahavidyapeetha",
+    src: "https://safewheelsindia.com/wp-content/uploads/2022/08/jss.jpg",
+  },
+  {
+    name: "Asian Paints",
+    src: "https://safewheelsindia.com/wp-content/uploads/2022/08/asian-paints.jpg",
+  },
+  {
+    name: "SKF",
+    src: "https://safewheelsindia.com/wp-content/uploads/2024/07/skf.jpg",
+  },
+  {
+    name: "Viwah",
+    src: "https://safewheelsindia.com/wp-content/uploads/2022/08/viwah-logonew.png",
+  },
+] as const;
+
+/** Partners & associations logos on /clientele. */
+export const partnerLogos = [
+  {
+    name: "Government of Karnataka",
+    src: "/images/clientele/govt-karnataka.png",
+  },
+  { name: "Incredible India", src: "/images/clientele/incredible-india-v2.png" },
+  { name: "All India Car Rentals (AICR)", src: "/images/clientele/aicr-v2.png" },
+  { name: "IATO", src: "/images/clientele/iato-v2.png" },
+  { name: "TAAI", src: "/images/clientele/taai-v3.png" },
+  { name: "SKÅL International", src: "/images/clientele/skal-v2.png" },
+  { name: "Karnataka Tourism Society", src: "/images/clientele/kts-v2.png" },
+  { name: "TAFI", src: "/images/clientele/tafi-v2.png" },
 ] as const;
 
 /** Full esteemed clientele list (shown on /clientele). */
@@ -420,38 +626,38 @@ export const blogs = [
   {
     title: "Why Choosing a Taxi in Mysore is Best for Tourists and Families",
     date: "August 5, 2025",
-    href: "https://safewheelsindia.com/blogs/why-choosing-a-taxi-in-mysore-is-best-for-tourists-and-families/",
+    href: "/blogs/why-choosing-a-taxi-in-mysore-is-best-for-tourists-and-families",
     image: "/images/blogs/mysore-choose-blogimg.png",
   },
   {
     title: "Best Taxi Services in Mysore for Airport, Coorg & Ooty Trips",
     date: "August 5, 2025",
-    href: "https://safewheelsindia.com/blogs/best-taxi-services-in-mysore-for-airport-coorg-ooty-trips/",
+    href: "/blogs/best-taxi-services-in-mysore-for-airport-coorg-ooty-trips",
     image: "/images/blogs/taxi-mysore-img-1.png",
   },
   {
     title: "How to Choose the Right Taxi Services in Mysore for Your Travel",
     date: "August 5, 2025",
-    href: "https://safewheelsindia.com/blogs/how-to-choose-the-right-taxi-services-in-mysore-for-your-travel/",
+    href: "/blogs/how-to-choose-the-right-taxi-services-in-mysore-for-your-travel",
     image: "/images/blogs/choose-imgblog.png",
   },
   {
     title: "Airport Transfers Made Easy: Tips for Stress-Free Travel",
     date: "June 25, 2024",
-    href: "https://safewheelsindia.com/blogs/airport-transfers-made-easy-tips-for-stress-free-travel/",
+    href: "/blogs/airport-transfers-made-easy-tips-for-stress-free-travel",
     image: "/images/blogs/safewheelblog2.jpg",
   },
   {
     title: "Exploring Mysuru Like a Local: Best Places to Visit with a Private Cab",
     date: "February 15, 2023",
-    href: "https://safewheelsindia.com/blogs/exploring-mysuru-like-a-local-best-places-to-visit-with-a-private-cab/",
+    href: "/blogs/exploring-mysuru-like-a-local-best-places-to-visit-with-a-private-cab",
     image: "/images/blogs/safewheelblog3.jpg",
   },
   {
     title:
       "Top 5 Reasons to Choose Safe Wheels India for Your Mysuru to Bengaluru Airport Transfers",
     date: "August 3, 2022",
-    href: "https://safewheelsindia.com/blogs/top-5-reasons-to-choose-safe-wheels-india-for-your-mysuru-to-bengaluru-airport-transfers/",
+    href: "/blogs/top-5-reasons-to-choose-safe-wheels-india-for-your-mysuru-to-bengaluru-airport-transfers",
     image: "/images/blogs/safewheelblog1.jpg",
   },
 ] as const;

@@ -8,7 +8,7 @@ import { Reveal } from "./Reveal";
 
 export function Destinations() {
   return (
-    <section className="bg-brand-black py-12 text-white md:py-16">
+    <section className="bg-brand-cream py-12 text-brand-black md:py-16">
       <div className="section-pad">
         <div className="container-wide">
           <Reveal className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
@@ -21,7 +21,7 @@ export function Destinations() {
                 Discover routes worth the journey.
               </h2>
             </div>
-            <p className="max-w-md text-sm leading-relaxed text-white/65 md:text-base">
+            <p className="max-w-md text-sm leading-relaxed text-brand-muted md:text-base">
               Domestic escapes, Mysuru sightseeing and international tour
               ideas—presented as discoverable inspiration. Enquire for tailored
               itineraries.

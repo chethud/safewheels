@@ -63,7 +63,7 @@ function insightContent(post: (typeof blogs)[number], index: number) {
     image: post.image,
     body: [] as string[],
     source: post.href,
-    href: post.href,
+    href: post.href.startsWith("/") ? post.href : `/blogs/${id}`,
     positionHint: index,
   };
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { useCms } from "@/components/cms/CmsProvider";
 import { Reveal } from "./Reveal";
@@ -11,7 +12,7 @@ export function Blog() {
   if (!posts.length) return null;
 
   return (
-    <section className="bg-brand-grey-light py-12 md:py-16">
+    <section id="blog" className="bg-brand-grey-light py-12 md:py-16">
       <div className="section-pad">
         <div className="container-wide">
           <Reveal className="mb-8 md:mb-10">
@@ -31,38 +32,35 @@ export function Blog() {
                 delay={0.05 * index}
                 className="group overflow-hidden rounded-3xl bg-white"
               >
-                <div className="relative min-h-[180px] bg-brand-black/5">
-                  {post.image ? (
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="img-cover hover-zoom"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  ) : null}
-                </div>
-                <div className="flex flex-col p-5 md:p-6">
-                  <time className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-grey">
-                    {post.date}
-                  </time>
-                  <h3 className="mt-2 font-display text-xl leading-snug text-brand-black md:text-[1.35rem]">
-                    {post.title}
-                  </h3>
-                  {post.excerpt ? (
-                    <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-brand-grey">
-                      {post.excerpt}
-                    </p>
-                  ) : null}
-                  <a
-                    href={post.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-black transition hover:text-brand-red"
-                  >
-                    Read More <ArrowUpRight size={14} />
-                  </a>
-                </div>
+                <Link href={post.href} className="block">
+                  <div className="relative min-h-[180px] bg-brand-black/5">
+                    {post.image ? (
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="img-cover hover-zoom"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    ) : null}
+                  </div>
+                  <div className="flex flex-col p-5 md:p-6">
+                    <time className="text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-grey">
+                      {post.date}
+                    </time>
+                    <h3 className="mt-2 font-display text-xl leading-snug text-brand-black md:text-[1.35rem]">
+                      {post.title}
+                    </h3>
+                    {post.excerpt ? (
+                      <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-brand-grey">
+                        {post.excerpt}
+                      </p>
+                    ) : null}
+                    <span className="mt-4 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-black transition group-hover:text-brand-red">
+                      Read More <ArrowUpRight size={14} />
+                    </span>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>
