@@ -1,4 +1,5 @@
 import { blogs as fileBlogs, testimonials as fileTestimonials } from "@/lib/data";
+import blogBodies from "@/lib/blog-bodies.json";
 
 export type CmsTestimonial = {
   id: string;
@@ -31,14 +32,23 @@ function slugify(value: string) {
     .replace(/^-|-$/g, "");
 }
 
+type BlogBody = { excerpt?: string; body?: string[] };
+
 export function getPublishedFallback(): PublishedContent {
-  const blogs: CmsBlog[] = fileBlogs.map((post) => ({
-    id: slugify(post.title),
-    title: post.title,
-    date: post.date,
-    href: post.href,
-    image: post.image,
-  }));
+  const bodies = blogBodies as Record<string, BlogBody>;
+  const blogs: CmsBlog[] = fileBlogs.map((post) => {
+    const id = slugify(post.title);
+    const content = bodies[id] || bodies[post.href.split("/").filter(Boolean).pop() || ""];
+    return {
+      id,
+      title: post.title,
+      date: post.date,
+      href: post.href,
+      image: post.image,
+      excerpt: content?.excerpt,
+      body: content?.body,
+    };
+  });
 
   const testimonials: CmsTestimonial[] = fileTestimonials.map((item) => ({
     id: slugify(item.name),

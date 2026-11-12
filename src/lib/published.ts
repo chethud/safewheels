@@ -69,8 +69,14 @@ export const getPublished = cache(async (): Promise<PublishedContent> => {
     const localPost = local.blogs.find(
       (item) => item.href === post.href || item.title === post.title,
     );
-    // Prefer local file images so homepage art updates without a CMS reseed.
-    return localPost?.image ? { ...post, image: localPost.image } : post;
+    if (!localPost) return post;
+    // Prefer local images + full article bodies so pages stay complete without a CMS reseed.
+    return {
+      ...post,
+      image: localPost.image || post.image,
+      excerpt: localPost.excerpt || post.excerpt,
+      body: localPost.body?.length ? localPost.body : post.body,
+    };
   });
   const testimonials = remote.testimonials.length
     ? remote.testimonials

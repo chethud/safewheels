@@ -9,6 +9,7 @@
 import { existsSync, readFileSync } from "fs";
 import { resolve } from "path";
 import { createClient } from "@supabase/supabase-js";
+import blogBodies from "../src/lib/blog-bodies.json";
 import { blogs, testimonials } from "../src/lib/data";
 
 function loadEnvFile(fileName: string) {
@@ -53,15 +54,18 @@ function slugify(value: string) {
 
 function insightContent(post: (typeof blogs)[number], index: number) {
   const id = slugify(post.title);
+  const content =
+    (blogBodies as Record<string, { excerpt?: string; body?: string[] }>)[id] ||
+    {};
   return {
     id,
     slug: id,
     title: post.title,
-    excerpt: "",
+    excerpt: content.excerpt || "",
     category: "Travel",
     date: post.date,
     image: post.image,
-    body: [] as string[],
+    body: content.body || ([] as string[]),
     source: post.href,
     href: post.href.startsWith("/") ? post.href : `/blogs/${id}`,
     positionHint: index,

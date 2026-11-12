@@ -241,7 +241,7 @@ export function BookingWidget({ compact = false }: { compact?: boolean }) {
           type="submit"
           className="btn-primary h-[52px] w-full whitespace-nowrap !rounded-2xl !px-6 lg:mb-0.5 lg:min-w-[200px] lg:w-auto"
         >
-          Search Availability <ArrowRight size={16} />
+          Enquiry <ArrowRight size={16} />
         </button>
       </div>
 
