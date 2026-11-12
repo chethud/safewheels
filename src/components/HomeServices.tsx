@@ -2,58 +2,25 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { homeServices } from "@/lib/data";
 import { Reveal } from "./Reveal";
 
 export function HomeServices() {
-  const scroller = useRef<HTMLDivElement>(null);
-
-  const scrollBy = (direction: -1 | 1) => {
-    const el = scroller.current;
-    if (!el) return;
-    el.scrollBy({ left: direction * (el.clientWidth * 0.7), behavior: "smooth" });
-  };
-
   return (
     <section className="bg-brand-cream-deep py-14 md:py-20">
       <div className="section-pad">
         <div className="container-wide">
-          <div className="mb-8 flex items-end justify-between gap-4 md:mb-10">
-            <Reveal className="max-w-xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
-                Our Services
-              </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.4rem)] leading-[1.05] text-brand-black">
-                Travel, <em className="italic text-brand-red">Simplified.</em>
-              </h2>
-            </Reveal>
+          <Reveal className="mb-8 max-w-xl md:mb-10">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
+              Our Services
+            </p>
+            <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.4rem)] leading-[1.05] text-brand-black">
+              Travel, <em className="italic text-brand-red">Simplified.</em>
+            </h2>
+          </Reveal>
 
-            <div className="hidden items-center gap-2 sm:flex">
-              <button
-                type="button"
-                onClick={() => scrollBy(-1)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-brand-black transition hover:border-brand-red hover:text-brand-red"
-                aria-label="Previous services"
-              >
-                <ArrowLeft size={16} />
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollBy(1)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white text-brand-black transition hover:border-brand-red hover:text-brand-red"
-                aria-label="Next services"
-              >
-                <ArrowRight size={16} />
-              </button>
-            </div>
-          </div>
-
-          <div
-            ref={scroller}
-            className="flex gap-4 overflow-x-auto pb-2 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-4"
-          >
+          <div className="flex gap-4 overflow-x-auto pb-2 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-4">
             {homeServices.map((service, index) => (
               <Reveal
                 key={service.id}
