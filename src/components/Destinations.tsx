@@ -48,11 +48,13 @@ export function Destinations() {
                       className="img-cover hover-zoom"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-                    <h3 className="font-display text-2xl md:text-3xl">{place.name}</h3>
-                    <p className="mt-2 text-sm text-white/75">{place.description}</p>
+                    <h3 className="font-display text-2xl text-white md:text-3xl">
+                      {place.name}
+                    </h3>
+                    <p className="mt-2 text-sm text-white/80">{place.description}</p>
                     <button
                       type="button"
                       onClick={() =>

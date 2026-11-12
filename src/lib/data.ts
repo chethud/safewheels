@@ -31,11 +31,11 @@ export const siteConfig = {
 
 export const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/tourist-places", label: "Tourist Places" },
-  { href: "/why-us", label: "Why Us" },
   { href: "/clientele", label: "Clientele" },
+  { href: "/why-us", label: "Why Us" },
+  { href: "/about", label: "About" },
 ] as const;
 
 export const homeServices = [
@@ -233,37 +233,35 @@ export const fleet = [
     name: "Luxury Cars",
     description:
       "Premium chauffeured vehicles for weddings, VIP travel and occasions that demand distinction.",
-    image: "https://safewheelsindia.com/wp-content/uploads/2024/07/byd.jpg",
+    image: "/images/fleet/luxury.jpg",
   },
   {
     id: "innova",
     name: "Innova Crysta",
     description:
       "Spacious, comfortable and ideal for families and outstation journeys across Karnataka.",
-    image:
-      "https://safewheelsindia.com/wp-content/uploads/2024/07/innova-crysta.jpg",
+    image: "/images/fleet/innova.jpg",
   },
   {
     id: "tt",
     name: "Tempo Traveller",
     description:
       "Group-ready travel for tours, temple visits and corporate outings with room to spare.",
-    image: "https://safewheelsindia.com/wp-content/uploads/2022/08/TT.jpg",
+    image: "/images/fleet/tempo.jpg",
   },
   {
     id: "carens",
     name: "Kia Carens",
     description:
       "Modern MPV comfort for city runs and medium-distance travel with ease.",
-    image:
-      "https://safewheelsindia.com/wp-content/uploads/2024/07/Kia-Carens.jpg",
+    image: "/images/fleet/carens.jpg",
   },
   {
     id: "sedan",
     name: "Sedans & Hatchbacks",
     description:
       "Practical, well-maintained cars for airport transfers and everyday city travel.",
-    image: "https://safewheelsindia.com/wp-content/uploads/2022/08/Etios.jpg",
+    image: "/images/fleet/sedan.jpg",
   },
 ] as const;
 
@@ -468,8 +466,8 @@ export const clients = [
     src: "/images/clientele/beml-v2.png",
   },
   {
-    name: "Viwah",
-    src: "https://safewheelsindia.com/wp-content/uploads/2022/08/viwah-logonew.png",
+    name: "Vivah",
+    src: "/images/clientele/vivah-v2.png",
   },
   {
     name: "Manipal Hospitals",
@@ -516,8 +514,8 @@ export const clienteleLogos = [
     src: "https://safewheelsindia.com/wp-content/uploads/2024/07/skf.jpg",
   },
   {
-    name: "Viwah",
-    src: "https://safewheelsindia.com/wp-content/uploads/2022/08/viwah-logonew.png",
+    name: "Vivah",
+    src: "/images/clientele/vivah-v2.png",
   },
 ] as const;
 
@@ -527,7 +525,11 @@ export const partnerLogos = [
     name: "Government of Karnataka",
     src: "/images/clientele/govt-karnataka.png",
   },
-  { name: "Incredible India", src: "/images/clientele/incredible-india-v2.png" },
+  {
+    name: "Incredible India",
+    src: "/images/clientele/incredible-india-v2.png",
+    dark: true,
+  },
   { name: "All India Car Rentals (AICR)", src: "/images/clientele/aicr-v2.png" },
   { name: "IATO", src: "/images/clientele/iato-v2.png" },
   { name: "TAAI", src: "/images/clientele/taai-v3.png" },
@@ -536,40 +538,15 @@ export const partnerLogos = [
   { name: "TAFI", src: "/images/clientele/tafi-v2.png" },
 ] as const;
 
-/** Full esteemed clientele list (shown on /clientele). */
+/** Full esteemed clientele list (names without logo tiles). */
 export const clienteleNames = [
-  "3G Consultants",
-  "Apollo BGS Hospital",
   "Asian Paints Ltd",
-  "Akash Pharmaceuticals",
-  "Autoliv India Pvt Ltd",
-  "Bank Note Paper Mill (P) Ltd",
-  "Base Education Services Pvt Ltd",
-  "B.S.Ravikumar & Associates",
   "BEML",
-  "Bharathi Yoga Dhama",
-  "Boehringer-Ingelheim",
-  "CAD Station Technologies",
-  "Cadila Healthcare Ltd",
   "Deputy Director Information",
   "DC Office",
-  "Eris Life Sciences Pvt. Ltd.",
-  "Eskon Traders",
-  "Farooquia Dental College",
-  "First Choice Food Products",
   "Forward",
-  "GIPS",
-  "Giri Stones Pvt Ltd",
   "GSSS Institute of Engineering",
-  "HDFC Standard Life Insurance",
-  "Hanu Reddy Realty",
-  "Hindustan Unilever Ltd",
-  "Hollingsworth & Vose",
   "Ifimed Pharmaceuticals Pvt Ltd",
-  "Indospectrum Pharmaceuticals",
-  "Infomaze Tech & Solution Pvt Ltd",
-  "J.B.Chemicals",
-  "J.K.Tyres Ltd",
   "J.S.S Ayurveda Hospital",
   "J.S.S College of Nanjangud",
   "J.S.S Hospital",
@@ -577,48 +554,13 @@ export const clienteleNames = [
   "J.S.S Travel Desk SJCE Campus",
   "J.S.S.Ayurveda Medical College",
   "J.S.S.University",
-  "Jaypee Cement",
-  "Jubilant Generics Ltd",
   "L & T Electrical & Automation",
   "L & T Technology Services",
-  "LG Balakrishnan & Bros. Ltd",
-  "LG Electronics India Ltd",
-  "Maris Spinners Ltd",
-  "Micro Labs Ltd",
-  "MCC",
-  "Murugan Medicals",
-  "Mysore Paints & Varnish",
-  "Nandi Roller Flour Mills",
   "Narayana Hrudayalaya",
-  "Nestle India Ltd",
-  "NIIT",
-  "Novo Nordisk",
-  "Pinakini Construction",
   "Properties in Mysore",
-  "Ramaswamy.K",
-  "Rane (Madras) Ltd",
   "Religare Health Insurance",
   "RIIIT",
   "S.J.C.E",
-  "S3V Technologies",
-  "SAN Engineering Locomotive",
-  "Shahi Exports Pvt. Ltd",
-  "Shree Aruna Consultants",
-  "Siddartha Resorts & Foods Pvt Ltd.",
-  "Skill Tech Engineers Contract",
-  "Sri Vivekananda Sevasharama",
-  "State Resources Centre",
-  "Sun Pharma Laboratories Ltd",
-  "Sys Information India (P) Ltd",
-  "Thought Focus",
-  "The Printers",
-  "Torrent Pharmaceuticals Ltd",
-  "Ultratech Cements Ltd",
-  "Usha Kiran Charitable Trust",
-  "USV Ltd",
-  "Vikram Hospital",
-  "Voith Paper Technology (India)",
-  "VTU",
   "Zoo",
 ] as const;
 
@@ -627,19 +569,19 @@ export const blogs = [
     title: "Why Choosing a Taxi in Mysore is Best for Tourists and Families",
     date: "August 5, 2025",
     href: "/blogs/why-choosing-a-taxi-in-mysore-is-best-for-tourists-and-families",
-    image: "/images/blogs/mysore-choose-blogimg.png",
+    image: "/images/blogs/blog-taxi-families.jpg",
   },
   {
     title: "Best Taxi Services in Mysore for Airport, Coorg & Ooty Trips",
     date: "August 5, 2025",
     href: "/blogs/best-taxi-services-in-mysore-for-airport-coorg-ooty-trips",
-    image: "/images/blogs/taxi-mysore-img-1.png",
+    image: "/images/blogs/blog-airport-coorg.jpg",
   },
   {
     title: "How to Choose the Right Taxi Services in Mysore for Your Travel",
     date: "August 5, 2025",
     href: "/blogs/how-to-choose-the-right-taxi-services-in-mysore-for-your-travel",
-    image: "/images/blogs/choose-imgblog.png",
+    image: "/images/blogs/blog-choose-taxi.jpg",
   },
   {
     title: "Airport Transfers Made Easy: Tips for Stress-Free Travel",

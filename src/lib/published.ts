@@ -65,7 +65,13 @@ export const getPublished = cache(async (): Promise<PublishedContent> => {
   const remote = await loadRemote();
   if (!remote) return local;
 
-  const blogs = remote.blogs.length ? remote.blogs : local.blogs;
+  const blogs = (remote.blogs.length ? remote.blogs : local.blogs).map((post) => {
+    const localPost = local.blogs.find(
+      (item) => item.href === post.href || item.title === post.title,
+    );
+    // Prefer local file images so homepage art updates without a CMS reseed.
+    return localPost?.image ? { ...post, image: localPost.image } : post;
+  });
   const testimonials = remote.testimonials.length
     ? remote.testimonials
     : local.testimonials;

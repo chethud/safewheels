@@ -39,6 +39,7 @@ export function Blog() {
                         src={post.image}
                         alt={post.title}
                         fill
+                        quality={90}
                         className="img-cover hover-zoom"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />

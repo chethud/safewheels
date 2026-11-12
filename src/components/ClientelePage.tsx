@@ -21,19 +21,21 @@ function LogoGrid({
       {items.map((item) => (
         <div
           key={`${item.name}-${item.src}`}
-          className={`flex h-[100px] items-center justify-center rounded-2xl border px-4 md:h-[120px] ${
-            item.dark
-              ? "border-black/20 bg-black"
-              : "border-black/6 bg-white"
-          }`}
+          className="flex h-[100px] items-center justify-center rounded-2xl border border-black/6 bg-white px-3 md:h-[120px] md:px-4"
         >
-          <Image
-            src={item.src}
-            alt={item.name}
-            width={280}
-            height={140}
-            className="max-h-14 w-auto max-w-[150px] object-contain md:max-h-[4.5rem]"
-          />
+          <span
+            className={`flex h-14 w-[150px] items-center justify-center md:h-16 md:w-[168px] ${
+              item.dark ? "rounded-md bg-black px-2 py-1" : ""
+            }`}
+          >
+            <Image
+              src={item.src}
+              alt={item.name}
+              width={280}
+              height={140}
+              className="h-full w-full object-contain"
+            />
+          </span>
         </div>
       ))}
     </div>

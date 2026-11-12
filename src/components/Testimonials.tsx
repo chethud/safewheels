@@ -70,7 +70,7 @@ export function Testimonials() {
                 <blockquote className="relative overflow-hidden rounded-[1.75rem] border border-black/8 bg-brand-grey-light p-6 md:p-8">
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute -top-3 left-4 font-display text-[7rem] leading-none text-brand-red/12 md:text-[8.5rem]"
+                    className="pointer-events-none absolute -top-3 right-4 font-display text-[7rem] leading-none text-brand-red/20 md:text-[8.5rem]"
                   >
                     “
                   </span>
