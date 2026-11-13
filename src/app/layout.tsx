@@ -17,28 +17,30 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "Safe Wheels Tours & Travels | Premium Travel from Mysuru Since 1999",
-    template: "%s | Safe Wheels Tours & Travels",
+    default:
+      "Safe Wheels | Cab Rentals & Car Hire in Mysuru Since 1999",
+    template: "%s | Safe Wheels Cab Rentals",
   },
   description:
-    "Safe Wheels Tours & Travels offers vehicle rentals, airport transfers, domestic and international tours from Mysuru since 1999. Book safe, reliable journeys with 25+ years of trust.",
+    "Book chauffeured cab rentals in Mysuru — city cabs, airport transfers, outstation trips and vehicle hire with trained drivers since 1999.",
   keywords: [
     "Safe Wheels",
-    "Mysuru taxi",
-    "Mysore car rental",
-    "airport transfers",
+    "Mysuru cab rental",
+    "Mysore car hire",
+    "Mysore taxi",
+    "airport transfers Mysore",
     "Innova Crysta rental",
     "Tempo Traveller Mysore",
-    "domestic tours Karnataka",
+    "outstation cab Mysuru",
   ],
   openGraph: {
-    title: "Safe Wheels Tours & Travels",
+    title: "Safe Wheels Cab Rentals | Mysuru",
     description:
-      "Every journey deserves a safer way. Premium vehicle rentals and tours from Mysuru since 1999.",
+      "Chauffeured cabs, airport transfers and outstation rentals from Mysuru since 1999.",
     type: "website",
     locale: "en_IN",
     url: "https://safewheelsindia.com",
-    siteName: "Safe Wheels Tours & Travels",
+    siteName: "Safe Wheels Cab Rentals",
   },
   robots: {
     index: true,

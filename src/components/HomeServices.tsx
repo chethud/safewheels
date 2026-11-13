@@ -13,10 +13,10 @@ export function HomeServices() {
         <div className="container-wide">
           <Reveal className="mb-8 max-w-xl md:mb-10">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
-              Our Services
+              Cab Services
             </p>
             <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.4rem)] leading-[1.05] text-brand-black">
-              Travel, <em className="italic text-brand-red">Simplified.</em>
+              Cabs for <em className="italic text-brand-red">every trip.</em>
             </h2>
           </Reveal>
 

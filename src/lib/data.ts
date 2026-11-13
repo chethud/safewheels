@@ -40,40 +40,39 @@ export const navLinks = [
 
 export const homeServices = [
   {
-    id: "domestic",
-    title: "Domestic Tours",
+    id: "local",
+    title: "Local / City Cabs",
     description:
-      "Curated journeys across India — hill stations, heritage cities and coastal escapes.",
-    href: "/services",
+      "Point-to-point rides across Mysuru — shopping, meetings, sightseeing and same-day drops.",
+    href: "/book",
     image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: "airport",
     title: "Airport Transfers",
     description:
       "Punctual pickups and drops to Bengaluru and Mysuru airports — day or night.",
-    href: "/services",
+    href: "/book",
     image:
       "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    id: "luxury",
-    title: "Luxury Rentals",
+    id: "outstation",
+    title: "Outstation Cabs",
     description:
-      "Premium cars for occasions that call for presence, comfort and refined presentation.",
+      "Comfortable highway runs to Coorg, Ooty, Wayanad, Bengaluru and beyond.",
     href: "/book",
     image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    id: "places",
-    title: "Tourist Places",
+    id: "rentals",
+    title: "Vehicle Rentals",
     description:
-      "Discover remarkable destinations and memorable experiences around Mysuru and beyond.",
-    href: "/tourist-places",
-    image:
-      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80",
+      "Innova, Tempo Traveller, sedans and luxury cars — chauffeured for the trip you need.",
+    href: "/#fleet",
+    image: "/images/fleet/innova.jpg",
   },
 ] as const;
 
@@ -232,35 +231,35 @@ export const fleet = [
     id: "luxury",
     name: "Luxury Cars",
     description:
-      "Premium chauffeured vehicles for weddings, VIP travel and occasions that demand distinction.",
+      "Chauffeured luxury cabs for weddings, VIP guests and occasions that need a polished presence.",
     image: "/images/fleet/luxury.jpg",
   },
   {
     id: "innova",
     name: "Innova Crysta",
     description:
-      "Spacious, comfortable and ideal for families and outstation journeys across Karnataka.",
+      "Our most booked family cab — spacious, AC comfort for outstation and airport runs.",
     image: "/images/fleet/innova.jpg",
   },
   {
     id: "tt",
     name: "Tempo Traveller",
     description:
-      "Group-ready travel for tours, temple visits and corporate outings with room to spare.",
+      "Group cab hire for tours, temple visits and corporate outings with room for everyone.",
     image: "/images/fleet/tempo.jpg",
   },
   {
     id: "carens",
     name: "Kia Carens",
     description:
-      "Modern MPV comfort for city runs and medium-distance travel with ease.",
+      "Modern MPV rental for city trips and medium-distance travel with easy luggage space.",
     image: "/images/fleet/carens.jpg",
   },
   {
     id: "sedan",
     name: "Sedans & Hatchbacks",
     description:
-      "Practical, well-maintained cars for airport transfers and everyday city travel.",
+      "Everyday city cabs and airport transfers — clean, reliable and budget-friendly.",
     image: "/images/fleet/sedan.jpg",
   },
 ] as const;

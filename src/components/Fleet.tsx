@@ -17,10 +17,10 @@ export function Fleet() {
           <Reveal className="mb-8 max-w-2xl md:mb-10">
             <div className="ribbon-accent mb-5" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-red">
-              Our Fleet
+              Choose Your Cab
             </p>
             <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] text-brand-black">
-              Vehicles chosen for comfort, presence and the road ahead.
+              Rent the right car for the ride ahead.
             </h2>
           </Reveal>
 
@@ -45,7 +45,7 @@ export function Fleet() {
 
               <div className="mt-8">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-grey">
-                  Category
+                  Rental category
                 </p>
                 <h3 className="mt-2 font-display text-4xl text-brand-black md:text-5xl">
                   {vehicle.name}
@@ -58,11 +58,11 @@ export function Fleet() {
                   className="btn-primary mt-8"
                   onClick={() =>
                     openWhatsApp(
-                      `Hello Safe Wheels, I would like to enquire about the ${vehicle.name} category.`,
+                      `Hello Safe Wheels, I would like to rent a ${vehicle.name} cab.`,
                     )
                   }
                 >
-                  Enquire Now
+                  Rent This Cab
                 </button>
               </div>
             </Reveal>

@@ -14,7 +14,7 @@ import { openWhatsApp } from "@/lib/whatsapp";
 const tabs = [
   "Book a Cab",
   "Airport Transfer",
-  "Tour Package",
+  "Outstation Trip",
   "Vehicle Rental",
 ] as const;
 
@@ -36,7 +36,7 @@ export function BookingWidget({ compact = false }: { compact?: boolean }) {
     if (tab === "Airport Transfer") {
       return { from: "Pickup", to: "Airport / City", date: "Transfer Date" };
     }
-    if (tab === "Tour Package") {
+    if (tab === "Outstation Trip") {
       return { from: "Starting City", to: "Destination", date: "Travel Date" };
     }
     if (tab === "Vehicle Rental") {
@@ -63,7 +63,7 @@ export function BookingWidget({ compact = false }: { compact?: boolean }) {
       `${labels.from}: ${from}`,
       `${labels.to}: ${to}`,
       `${labels.date}: ${date}`,
-      tab === "Tour Package" ? `Days: ${days}` : null,
+      tab === "Outstation Trip" ? `Days: ${days}` : null,
       tab === "Vehicle Rental" ? `Vehicle Preference: ${vehicle}` : null,
       `Passengers: ${passengers}`,
     ]
@@ -178,7 +178,7 @@ export function BookingWidget({ compact = false }: { compact?: boolean }) {
           </div>
         </div>
 
-        {tab === "Tour Package" ? (
+        {tab === "Outstation Trip" ? (
           <div>
             <label className="field-label" htmlFor="booking-days">
               Days
@@ -245,7 +245,7 @@ export function BookingWidget({ compact = false }: { compact?: boolean }) {
         </button>
       </div>
 
-      {(tab === "Tour Package" || tab === "Vehicle Rental") && (
+      {(tab === "Outstation Trip" || tab === "Vehicle Rental") && (
         <div className="mt-3 max-w-xs">
           <label className="field-label" htmlFor="booking-passengers-extra">
             Passengers
